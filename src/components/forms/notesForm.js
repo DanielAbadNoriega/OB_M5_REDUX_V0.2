@@ -34,6 +34,7 @@ const NotesForm = () => {
             placeholder="Write title"
             aria-label="title"
             aria-describedby="basic-addon1"
+            autoFocus
           />
         </div>
         {/* TEXT */}
