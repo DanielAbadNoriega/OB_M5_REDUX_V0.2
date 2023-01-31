@@ -26,7 +26,7 @@ const NoteList = () => {
   };
 
   return (
-    <div className="col-6 mx-auto">
+    <div className="col-12 col-md-12 mx-auto">
       <div className="list-group col-6 col-md-6 mt-2 mb-2 mx-auto">
         {notes.length > 0 ? (
           getNotesFiltered(notes, filter).map((note) => (
