@@ -2,7 +2,8 @@ let noteID = 0;
 
 const CREATE_NOTE = "@create/note";
 const GET_NOTE = "@get/note";
-const FILTER = "SET_FILTER";
+const TOGGLE_NOTE = "@toggle/note";
+const FILTER_NOTE = "SET_FILTER";
 
 export const createNote = (title, text) => {
   return {
@@ -25,9 +26,18 @@ export const getNoteId = (id) => {
   };
 };
 
+export const toggleNote = (id) => {
+  return {
+    type: TOGGLE_NOTE,
+    payload:{
+      id
+    }
+  }
+}
+
 export const filterNote = (filter) => {
   return {
-    type: FILTER,
+    type: FILTER_NOTE,
     filter
   };
 };

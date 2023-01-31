@@ -9,12 +9,21 @@ import { Provider } from "react-redux";
 
 // STORE
 import { noteStore } from "./store/config/storeConfig";
+import { createNote, filterNote } from "./store/actions/notesActions";
 
 // STYLES
 // STYLES
 import "bootstrap/dist/css/bootstrap.css";
 
 const noteAppStore = noteStore();
+noteAppStore.subscribe(() =>
+  console.log("[ noteAppStore ] State: ", noteAppStore.getState())
+);
+noteAppStore.dispatch(filterNote("ALL"));
+noteAppStore.dispatch(createNote("Note 1", "My note 1"));
+noteAppStore.dispatch(createNote("Note 2", "My note 2"));
+noteAppStore.dispatch(createNote("Note 3", "My note 3"));
+noteAppStore.dispatch(createNote("Note 4", "My note 4"));
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
