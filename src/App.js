@@ -7,8 +7,8 @@ function App() {
   return (
     <div className="App">
       <NotesForm></NotesForm>
-      <NoteList></NoteList>
       <FilterButtons></FilterButtons>
+      <NoteList></NoteList>
     </div>
   );
 }

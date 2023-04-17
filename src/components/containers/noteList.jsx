@@ -3,33 +3,27 @@ import { useSelector } from "react-redux";
 import Note from "../pure/note";
 
 const NoteList = () => {
-  const { notesState, filterState } = useSelector((state) => {
-    console.log("[ NotesForm - State ] State: ", state);
-    return state;
-  });
-
-  const notes = notesState;
-  const filter = filterState;
-
-  const getNotesFiltered = (notes, filter) => {
-    console.log(filter);
-    switch (filter) {
+  const notes = useSelector(({ filterState, notesState }) => {
+    console.log(`[ NotesForm - State ] notesState: `);
+    console.table(notesState);
+    console.log(`[ NotesForm - State ] filerState: "${filterState}"`);
+    switch (filterState) {
       case "ALL":
-        return notes;
+        return notesState;
       case "COMPLETED":
-        return notes.filter((note) => note.completed);
+        return notesState.filter((note) => note.completed);
       case "UNCOMPLETED":
-        return notes.filter((note) => !note.completed);
+        return notesState.filter((note) => !note.completed);
       default:
-        return notes;
+        return notesState;
     }
-  };
+  });
 
   return (
     <div className="col-12 col-md-12 mx-auto">
       <div className="list-group col-6 col-md-6 mt-2 mb-2 mx-auto">
         {notes.length > 0 ? (
-          getNotesFiltered(notes, filter).map((note) => (
+          notes.map((note) => (
             <button
               key={note.id}
               type="button"

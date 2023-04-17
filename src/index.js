@@ -12,7 +12,6 @@ import { noteStore } from "./store/config/storeConfig";
 import { createNote, filterNote } from "./store/actions/notesActions";
 
 // STYLES
-// STYLES
 import "bootstrap/dist/css/bootstrap.css";
 
 const noteAppStore = noteStore();

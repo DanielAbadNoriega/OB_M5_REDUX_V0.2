@@ -19,9 +19,9 @@ const NotesForm = () => {
   }
 
   return(
-    <div className="d-flex flex-column align-items-center justify-content-center mt-2 gap-2">
+    <div className="d-flex flex-column align-items-center justify-content-center mt-2 gap-2 col-12 col-lg-12">
       <h1>CREATE NOTE</h1>
-      <form className="d-flex flex-lg-column align-items-center justify-content-center col-6 gap-3" onSubmit={newNote}>
+      <form className="d-flex flex-sm-column align-items-center justify-content-center col-8 col-sm-6 gap-3" onSubmit={newNote}>
         {/* TITLE */}
         <div className="input-group input-group-lg mb-3">
           <span className="input-group-text" id="basic-addon1">
@@ -52,7 +52,7 @@ const NotesForm = () => {
           />
         </div>
 
-        <button className="btn btn-success" type="submit"> NEW NOTE </button>
+        <button className="btn btn-success mb-2" type="submit"> NEW NOTE </button>
       </form>
     </div>
   );
